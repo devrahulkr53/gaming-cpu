@@ -1,0 +1,77 @@
+<div class="container">
+    <div class="d-flex mt-2">
+        <div class="mx-1"><a href="" class="text-decoration-none text-dark">Home</a> /</div>
+        <div class="mx-1"><a href="/gaming-pc" routerLink="/gaming-pc" class="text-decoration-none text-dark">Gaming PCs</a> /</div>
+        <div class="mx-1">{{product?.name}}</div>
+    </div>
+    <h1>Gaming PCs</h1>
+</div>
+<div *ngIf="isPageLoading" class="container-fluid py-5 my-5">
+    <div class="text-center">
+        <div class="spinner-border text-dark"></div>
+    </div>
+</div>
+<div *ngIf="!isPageLoading" class="container-fluid my-3">
+    <div class="row py-3">
+        <div class="col-md-12 d-flex justify-content-between">
+            <img [src]="product?.productImage" class="d-none d-md-block p-3 px-5" width="400px" alt="">
+            <div>
+                <img [src]="product?.productImage" class="d-md-none d-block" width="150px" alt="">
+                <h3 class="display-4" style="font-weight: 400;">{{product?.productName}}</h3>
+                <h6 class="display-6"><s style="color: darkred;">Rs. {{product?.marketPrice}}</s> Rs. {{product?.sellingPrice}}</h6>
+                <div class="d-flex align-items-center my-1">
+                    <img src="assets/icons/check.png" width="20px" height="20px" alt="">
+                    <strong class="px-2">Free Delivery</strong>
+                </div>
+                <div class="d-flex align-items-center my-1">
+                    <img src="assets/icons/check.png" width="20px" height="20px" alt="">
+                    <strong class="px-2">Cash on delivery available</strong>
+                </div>
+                <div class="d-flex align-items-center my-1">
+                    <img src="assets/icons/check.png" width="20px" height="20px" alt="">
+                    <strong class="px-2">Only preferred brand components are used.</strong>
+                </div>
+                <button class="btn btn-lg btn-dark px-5 mt-2" routerLink="/checkout" [queryParams]="{id:productId}">Purchase Now</button>
+            </div>
+        </div>
+    </div>
+    <div class="row bg-dark text-white rounded px-3 py-4 my-4">
+        <h2>Product Description</h2>
+        <p>{{product?.description}}</p>
+    </div>
+    <div class="d-flex align-items-center p-0 px-2 mt-4">
+        <h4 class="m-0 p-2 px-4">Compatible ( Games / Software )</h4>
+        <h4 class="m-0 p-2 px-4" style="border-bottom: 8px solid black;">Specification</h4>
+        <h4 class="m-0 p-2 px-4">Additional Information</h4>
+    </div>
+    <div class="row border border-4 border-dark p-3 rounded">
+        <div class="d-flex align-items-center">
+            <img src="assets/icons/cpu.png" width="28px" height="28px" alt="">
+            <h5 class="px-2 m-0">{{product?.specification?.processor}}</h5>
+        </div>
+        <div class="d-flex align-items-center">
+            <img src="assets/icons/ram.png" width="28px" height="28px" alt="">
+            <h5 class="px-2 m-0">{{product?.specification?.ram}}</h5>
+        </div>
+        <div class="d-flex align-items-center">
+            <img src="assets/icons/gpu.png" width="28px" height="28px" alt="">
+            <h5 class="px-2 m-0">{{product?.specification?.graphics}}</h5>
+        </div>
+        <div class="d-flex align-items-center">
+            <img src="assets/icons/hard-drive.png" width="28px" height="28px" alt="">
+            <h5 class="px-2 m-0">{{product?.specification?.harddrive}}</h5>
+        </div>
+        <div class="d-flex align-items-center">
+            <img src="assets/icons/ssd-drive.png" width="28px" height="28px" alt="">
+            <h5 class="px-2 m-0">{{product?.specification?.ssd}}</h5>
+        </div>
+        <div class="d-flex align-items-center">
+            <img src="assets/icons/height.png" width="28px" height="28px" alt="">
+            <h5 class="px-2 m-0">{{product?.specification?.height}}</h5>
+        </div>
+        <hr class="my-3 text-white">
+        <h5>Dimensions: 20cm x 30cm x 5cm</h5>
+        <h5>Seller: {{product?.seller}}</h5>
+
+    </div>
+</div>

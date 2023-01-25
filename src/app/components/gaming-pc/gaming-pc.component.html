@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="d-flex mt-2">
+        <div class="mx-1"><a href="" routerLink="/" class="text-decoration-none text-dark">Home</a> /</div>
+        <div class="mx-1">Gaming PCs</div>
+    </div>
+    <h1>Gaming PCs</h1>
+</div>
+<div class="container-fluid my-3">
+    <div class="d-flex align-items-center p-0 px-2 mt-4">
+        <h4 class="m-0 p-2 px-4 cursor-pointer" [ngClass]="{'active-tab':selectedTab === 'BUDGET GAMING'}" (click)="selectedTab = 'BUDGET GAMING'">Budget Gaming</h4>
+        <h4 class="m-0 p-2 px-4 cursor-pointer" [ngClass]="{'active-tab':selectedTab === 'EXTREME GAMING'}" (click)="selectedTab = 'EXTREME GAMING'">Extreme Gaming</h4>
+        <h4 class="m-0 p-2 px-4 cursor-pointer" [ngClass]="{'active-tab':selectedTab === 'STREAMING'}" (click)="selectedTab = 'STREAMING'">Streaming</h4>
+    </div>
+    <div *ngIf="!isPageLoading" class="row text-center border border-5 border-dark pt-3" style="border-bottom: none !important;border-left: none !important;border-right: none !important;">
+        <div *ngFor="let item of productList" [ngClass]="{'d-none':selectedTab !== item?.name}" class="col-6 col-md-3 p-1">
+            <div class="card cursor-pointer bg-dark text-white my-1" [routerLink]="['/product']" [queryParams]="{id:item.id}">
+                <img [src]="item.productImage" width="70%" height="280px" class="mx-auto p-4" alt="">
+                <div class="p-2">
+                    <button class="btn btn-lg btn-secondary px-5">View Product</button>
+                </div>
+                <h3>{{item.name}}</h3>
+                <p>Rs. {{item.sellingPrice}}</p>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="isPageLoading" class="row py-5 my-5">
+        <div class="text-center">
+            <div class="spinner-border text-dark"></div>
+        </div>
+    </div>
+    
+</div>

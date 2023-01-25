@@ -1,0 +1,20 @@
+<div class="border border-3 border-dark rounded p-3 px-4">
+    <h1>Login/Register with Phone Number</h1>
+    <div id="sign-in-button"></div>
+    <div class="row">
+        <div *ngIf="!confirmationResult" class="col-md-6">
+            <label for="inputPhoneNumber4" class="form-label">Phone Number</label>
+            <input type="text" [(ngModel)]="phoneNumber" class="form-control p-2 px-3 border border-3 border-dark" id="inputPhoneNumber4">
+        </div>
+        <div *ngIf="confirmationResult" class="col-md-6">
+            <label for="inputOTP4" class="form-label">OTP</label>
+            <input type="text" [(ngModel)]="otp" class="form-control p-2 px-3 border border-3 border-dark" id="inputOTP4">
+        </div>
+        <div class="my-2">
+            <button *ngIf="!confirmationResult" class="btn btn-lg btn-dark me-2" 
+            (click)="sendOTP()" [disabled]="isLoading">{{isLoading ? 'Loading ...':'SEND OTP'}}</button>
+            <button *ngIf="confirmationResult" class="btn btn-lg btn-dark" 
+            (click)="verifyOTP()" [disabled]="isLoading">{{isLoading ? 'Loading ...':'VERIFY OTP'}}</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="d-flex align-items-center my-3">
+    <img src="assets/icons/check-outline.png" width="50px" height="50px" alt="">
+    <div class="p-3">
+        <h6 class="m-0">Order Id #{{billingAddress?.orderId}}</h6>
+        <h4>Thank you {{billingAddress?.fullname}}</h4>
+    </div>
+</div>
+<div class="container fluid mb-5">
+    <div class="row">
+        <div class="col-md-7 p-0">
+            <div class="p-3 px-4 border border-4 border-dark rounded">
+                <h4>Your order has been placed for Rs. 29,898</h4>
+                <p>You order will be delivered withing 4-5 business days.</p>
+                <button class="btn btn-lg btn-dark">Track Order</button>
+            </div>
+            <div class="p-3 px-4 bg-dark text-white py-4 rounded mt-3">
+                <h4>Order Information</h4>
+                <div>Fullname: {{billingAddress?.fullname}}</div>
+                <div>Email Address: {{billingAddress?.email}}</div>
+                <div>Phone Number: {{billingAddress?.phoneNumber}}</div>
+                <div>Address: {{billingAddress?.address}} {{billingAddress?.address2}} {{billingAddress?.city}} - {{billingAddress?.zip}}</div>
+                <!-- <button class="btn btn-lg btn-dark mt-5">Track Order</button> -->
+            </div>
+
+        </div>
+        <div class="col-md-5">
+            <div class="py-4">
+                <img src="assets/pc-images/pc (1).png" width="80px" alt="">
+                <div class="p-2">
+                    <h5>{{product?.name}}</h5>
+                    <p>{{product?.productName}}</p>
+                    <a class="text-dark" href="">Specification details</a>
+                    <p class="display-6">Rs. {{product?.sellingPrice}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

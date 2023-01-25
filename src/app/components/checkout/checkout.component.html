@@ -1,0 +1,92 @@
+<div class="container">
+    <div class="d-flex mt-2">
+        <div class="mx-1"><a href="" routerLink="/" class="text-decoration-none text-dark">Home</a> /</div>
+        <div class="mx-1">Checkout</div>
+    </div>
+    <h1>Checkout</h1>
+</div>
+<div class="container my-4">
+    <div class="row">
+        <div class="col-md-4 p-2">
+            <!-- <div class="d-flex align-items-center bg-dark text-white rounded p-1 px-2 mb-3">
+                <img [src]="product?.productImage" width="50px" alt="">
+                <h5>Budget Gaming</h5>
+                <img src="assets/icons/down-arrow.png" width="40px" class="ms-auto" alt="">
+            </div> -->
+            <div class="">
+                <img [src]="product?.productImage" width="80px" class="d-block d-md-none" alt="">
+                <img [src]="product?.productImage" width="240px" class="d-none d-md-block" alt="">
+                <div class="p-2">
+                    <h5>{{product?.name}}</h5>
+                    <p>{{product?.productName}}</p>
+                    <a class="text-dark" href="">Specification details</a>
+                    <p class="display-6">Rs. {{product?.sellingPrice}}</p>
+                </div>
+            </div>
+            <h5>Total Amount: Rs. {{product?.sellingPrice}}</h5>
+        </div>
+        <div class="col-md-8">
+            <hr class="d-block d-md-none">
+            <app-login *ngIf="!authService.isLoggedIn"></app-login>
+            <div *ngIf="authService.isLoggedIn" class="border border-3 border-dark rounded p-3 px-4 d-flex align-items-center">
+                <img src="assets/icons/check.png" width="30px" alt="">
+                <h3 class="m-0 ps-2 d-none d-md-block">{{authService.currentUser.data.phoneNumber}}</h3>
+                <h5 class="m-0 ps-2 d-block d-md-none">{{authService.currentUser.data.phoneNumber}}</h5>
+                <button class="btn btn-sm btn-dark ms-auto" (click)="authService.logout()">Log Out</button>
+            </div>
+
+            <form [formGroup]="billingForm" (ngSubmit)="onSubmit()">
+                <div class="border border-3 border-dark rounded p-3 px-4 mt-3" [ngStyle]="{'opacity': authService.isLoggedIn ? '1':'0.3'}">
+                    <h1 class="">Billing Address</h1>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="inputPhoneNumber4" class="form-label">Full Name</label>
+                            <input type="text" formControlName="fullname" 
+                            class="form-control p-2 px-3 border border-3 {{billingForm.get('fullname')?.errors && billingForm.get('fullname')?.touched ? 'border-danger':'border-dark'}}" 
+                            id="inputPhoneNumber4">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputEmail4" class="form-label">Email Address</label>
+                            <input type="email" formControlName="email" 
+                            class="form-control p-2 px-3 border border-3 {{billingForm.get('email')?.errors && billingForm.get('email')?.touched ? 'border-danger':'border-dark'}}" 
+                            id="inputEmail4">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputAddress" class="form-label">Address</label>
+                            <input type="text" formControlName="address" 
+                            class="form-control p-2 px-3 border border-3 {{billingForm.get('address')?.errors && billingForm.get('address')?.touched ? 'border-danger':'border-dark'}}" 
+                            id="inputAddress" placeholder="1234 Main St">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputAddress2" class="form-label">Address 2 (optional)</label>
+                            <input type="text" formControlName="address2" 
+                            class="form-control p-2 px-3 border border-3 {{billingForm.get('address2')?.errors && billingForm.get('address2')?.touched ? 'border-danger':'border-dark'}}" 
+                            id="inputAddress2" placeholder="Apartment, studio, or floor">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputState" class="form-label">State</label>
+                            <select id="inputState" formControlName="state" 
+                            class="form-select p-2 px-3 border border-3 {{billingForm.get('state')?.errors && billingForm.get('state')?.touched ? 'border-danger':'border-dark'}}">
+                                <option *ngFor="let item of stateList" [value]="item">{{item}}</option>
+                            </select>
+                        </div>
+                        <div class="col-6">
+                            <label for="inputCity" class="form-label">City</label>
+                            <input type="text" formControlName="city" 
+                            class="form-control p-2 px-3 border border-3 {{billingForm.get('city')?.errors && billingForm.get('city')?.touched ? 'border-danger':'border-dark'}}" 
+                            id="inputCity">
+                        </div>
+                        <div class="col-6 col-md-2">
+                            <label for="inputZip" class="form-label">Zip</label>
+                            <input type="text" formControlName="zip" 
+                            class="form-control p-2 px-3 border border-3 {{billingForm.get('zip')?.errors && billingForm.get('zip')?.touched ? 'border-danger':'border-dark'}}" 
+                            id="inputZip">
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-lg btn-dark my-3 px-3" [disabled]="!authService.isLoggedIn">PLACE ORDER with COD</button>
+            </form>
+        </div>
+        
+    </div>
+</div>
