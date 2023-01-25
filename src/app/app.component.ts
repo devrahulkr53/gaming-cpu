@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { AuthService } from './services/auth.service';
 
 @Component({
@@ -8,8 +10,14 @@ import { AuthService } from './services/auth.service';
 })
 export class AppComponent {
   title = 'gaming-cpu';
+  static isBrowser = new BehaviorSubject<boolean>(false);
 
-  constructor(private authService: AuthService){}
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: any,
+    private authService: AuthService
+  ) {
+    AppComponent.isBrowser.next(isPlatformBrowser(platformId));
+  }
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
