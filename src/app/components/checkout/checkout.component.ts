@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { CheckoutService } from 'src/app/services/checkout.service';
@@ -57,8 +58,17 @@ export class CheckoutComponent implements OnInit {
     private checkoutService: CheckoutService,
     private router: Router,
     private route: ActivatedRoute,
-    private productService: ProductService
+    private productService: ProductService,
+    private meta: Meta,
+    private title: Title
   ) {
+    this.meta.addTags([
+      {name: 'description', content: ''},
+      {name: 'author', content: ''},
+      {name: 'keywords', content: ''}
+    ])
+    this.title.setTitle('Checkout | GamingCPU')
+    
     route.queryParams.subscribe(res=>{
       this.productId = res["id"]
       this.getProduct(this.productId)  

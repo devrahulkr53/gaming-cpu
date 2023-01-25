@@ -1,7 +1,7 @@
 <div class="container-fluid text-white">
     <div class="row p-1 py-5 align-items-center">
         <div class="col-md-7">
-            <h1 class="display-2" style="font-weight: 700;">BEST GAMING PC AT LOWEST PRICE</h1>
+            <h1 class="display-2" style="font-weight: 700;">Buy Prebuilt Gaming PC Starting From Rs.20,000</h1>
             <p class="">GamingCPU is a leading company for best gaming pc at lowest price in India. Purchase your gaming
                 pc from our customized category of PCs.</p>
             <div class="d-block d-md-none">
@@ -22,26 +22,29 @@
             </div>
         </div>
         <div class="col-md-3 d-none d-md-block offset-md-2">
-            <img src="assets/pc-images/extreme/1.png" width="100%" alt="">
+            <div id="mydiv"></div>
+            <!-- <img src="assets/pc-images/extreme/1.png" width="100%" alt=""> -->
         </div>
     </div>
     <div id="about" class="row">
         <div class="col-md-12 bg-dark rounded my-5 p-3 p-md-5">
-            <h1 class="display-4">About GamingCPU</h1>
-            <p class="text-sm   ">Since we started our journey in 2015, we’ve been striving to provide you with the ultimate Custom PC
-                experience. We are a team of proficient professionals who are zealous to make all our valued customers
-                happy & satisfied by offering premium-quality products & unmatched services. That’s why we are widely
-                recognized as the most reliable Custom PC builder in India, specializing in building High-Performance
-                Custom Workstation Computers, Gaming PCs, and Servers.
-    
-                WE NEVER SETTLE FOR LESS & neither should you. We assure you that you’ll hardly find this level of
-                craftsmanship & customizability elsewhere. And our industry leading 3 Years Warranty along with Lifetime
-                Technical Support always lets you enjoy Peak PC Performance without any worries.</p>
+            <h3 class="display-4">About US</h3>
+            <p class="text-sm">
+                GamingCPU has been registered under Ministry of Corporate Affairs, Govt. of India.
+                It was started in 26th January 2023 with an aim to provide 
+                best in quality gaming pc at lowest price without compromising with quality. 
+                Also we avoid local components and use only branded components like asus, msi, 
+                nvidia, corsair, etc to build pc for better user experience.
+                We focus to build gaming pc that supports most of the pc and playstation 
+                games at minimum cost.
+
+            </p>
             <hr class="my-4">
-            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+            <p>You can explore more about the company like founders and employees. Click the link below to know more about the company</p>
             <a class="btn btn-secondary btn-lg" href="#" role="button">Learn more</a>
         </div>
     </div>
+    
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -58,7 +61,7 @@
                             <img [src]="item.productImage" width="80%" height="280px" class="mx-auto p-4" alt="">
                             <div class="p-2 text-center">
                                 <!-- <button class="btn btn-lg btn-secondary px-5">View Product</button> -->
-                                <h1>Rs. {{item.sellingPrice}}</h1>
+                                <h2>Rs. {{item.sellingPrice}}</h2>
                                 <h6>{{item.name}}</h6>
                             </div>
                         </div>
@@ -76,7 +79,7 @@
                             <img [src]="item.productImage" width="80%" height="280px" class="mx-auto p-4" alt="">
                             <div class="p-2 text-center">
                                 <!-- <button class="btn btn-lg btn-secondary px-5">View Product</button> -->
-                                <h1>Rs. {{item.sellingPrice}}</h1>
+                                <h2>Rs. {{item.sellingPrice}}</h2>
                                 <h6>{{item.name}}</h6>
                             </div>
                         </div>
@@ -94,7 +97,7 @@
                             <img [src]="item.productImage" width="80%" height="280px" class="mx-auto p-4" alt="">
                             <div class="p-2 text-center">
                                 <!-- <button class="btn btn-lg btn-secondary px-5">View Product</button> -->
-                                <h1>Rs. {{item.sellingPrice}}</h1>
+                                <h2>Rs. {{item.sellingPrice}}</h2>
                                 <h6>{{item.name}}</h6>
                             </div>
                         </div>
@@ -104,11 +107,11 @@
 
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <button class="carousel-control-prev bg-dark" style="width: 8%;" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <button class="carousel-control-next bg-dark" style="width: 8%;" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>

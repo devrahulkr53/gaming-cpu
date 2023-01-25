@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -11,8 +12,17 @@ export class HomepageComponent implements OnInit {
   productList:any;
   isPageLoading:boolean = true;
   constructor(
-    private productService: ProductService
-  ) { }
+    private productService: ProductService,
+    private meta: Meta,
+    private title: Title
+  ) { 
+    this.meta.addTags([
+      {name: 'description', content: 'Buy gaming pc from our customized category of PC. GamingCPU is a leading company for best prebuilt gaming pc at lowest price in India.'},
+      {name: 'author', content: ''},
+      {name: 'keywords', content: ''}
+    ])
+    this.title.setTitle('Buy Prebuilt Gaming PC in India Starting From Rs.20,000')
+  }
 
   ngOnInit(): void {
     this.getProducts()

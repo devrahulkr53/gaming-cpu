@@ -1,0 +1,14 @@
+#mydiv{ 
+    animation: changeBg 15s infinite;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 278px;
+    height: 350px;
+}
+@keyframes changeBg{
+   0%,100%  {background-image: url("/assets/pc-images/extreme/1.png");}
+   25% {background-image: url("/assets/pc-images/extreme/2.png");}
+   50% {background-image: url("/assets/pc-images/extreme/3.png");}
+   75% {background-image: url("/assets/pc-images/extreme/4.png");}
+}
+

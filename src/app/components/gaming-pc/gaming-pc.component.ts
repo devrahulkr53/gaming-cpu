@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -13,8 +14,17 @@ export class GamingPcComponent implements OnInit {
   isPageLoading:boolean = true;
   selectedTab:string = 'BUDGET GAMING';
   constructor(
-    private productService: ProductService
-  ) { }
+    private productService: ProductService,
+    private meta: Meta,
+    private title: Title
+  ) {
+    this.meta.addTags([
+      {name: 'description', content: ''},
+      {name: 'author', content: ''},
+      {name: 'keywords', content: ''}
+    ])
+    this.title.setTitle('Budget, Extreme and Streaming Gaming PC')
+  }
 
   ngOnInit(): void {
     this.getProducts()
