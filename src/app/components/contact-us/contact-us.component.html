@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="d-flex mt-2">
+        <div class="mx-1"><a href="" routerLink="/" class="text-decoration-none text-dark">Home</a> /</div>
+        <div class="mx-1">Contact Us</div>
+    </div>
+    <h1>Contact Us</h1>
+</div>
+
+<div class="container my-3">
+    <h2>We’re Always Here for You</h2>
+    <p>Please do not hesitate to contact us if you require further information about our logisitc service.</p>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <div class="">
+            <div class="row g-3">
+                <div class="col-6 col-md-4">
+                    <label for="inputPhoneNumber4" class="form-label">Full Name</label>
+                    <input type="text" formControlName="fullname" 
+                    class="form-control p-2 px-3 border border-3 {{contactForm.get('fullname')?.errors && contactForm.get('fullname')?.touched ? 'border-danger':'border-dark'}}" 
+                    id="inputPhoneNumber4">
+                </div>
+                <div class="col-6 col-md-4">
+                    <label for="inputEmail4" class="form-label">Email Address</label>
+                    <input type="email" formControlName="email" 
+                    class="form-control p-2 px-3 border border-3 {{contactForm.get('email')?.errors && contactForm.get('email')?.touched ? 'border-danger':'border-dark'}}" 
+                    id="inputEmail4">
+                </div>
+                <div class="col-12 col-md-8">
+                    <label for="inputPhoneNumber4" class="form-label">Phone Number</label>
+                    <input type="text" formControlName="phoneNumber" 
+                    class="form-control p-2 px-3 border border-3 {{contactForm.get('phoneNumber')?.errors && contactForm.get('phoneNumber')?.touched ? 'border-danger':'border-dark'}}" 
+                    id="inputPhoneNumber4">
+                </div>
+                <div class="col-12 col-md-8">
+                    <label for="inputMessage4" class="form-label">Description</label>
+                    <input type="text" formControlName="message" 
+                    class="form-control p-2 px-3 border border-3 {{contactForm.get('message')?.errors && contactForm.get('message')?.touched ? 'border-danger':'border-dark'}}" 
+                    id="inputMessage4">
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-lg btn-dark my-3 p-2 px-5">SUBMIT</button>
+    </form>
+</div>
