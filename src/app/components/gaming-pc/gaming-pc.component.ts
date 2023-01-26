@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -15,6 +16,7 @@ export class GamingPcComponent implements OnInit {
   selectedTab:string = 'BUDGET GAMING';
   constructor(
     private productService: ProductService,
+    private route: ActivatedRoute,
     private meta: Meta,
     private title: Title
   ) {
@@ -24,6 +26,10 @@ export class GamingPcComponent implements OnInit {
       {name: 'keywords', content: ''}
     ])
     this.title.setTitle('Budget, Extreme and Streaming Gaming PC')
+    route.queryParams.subscribe((res:any)=>{
+      console.log(res)
+      this.selectedTab = res?.category || 'BUDGET GAMING';
+    })
   }
 
   ngOnInit(): void {

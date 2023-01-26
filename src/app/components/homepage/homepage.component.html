@@ -4,13 +4,15 @@
             <h1 class="display-2" style="font-weight: 700;">Buy Prebuilt Gaming PC Starting From Rs.20,000</h1>
             <p class="">GamingCPU is a leading company for best gaming pc at lowest price in India. Purchase your gaming
                 pc from our customized category of PCs.</p>
-            <div class="d-block d-md-none">
-                <button class="btn btn-sm btn-light px-4 me-2">Contact Us</button>
-                <button class="btn btn-sm btn-dark px-4" routerLink="/gaming-pc">Explore PCs</button>
+            <div class="d-flex d-md-none align-items-center gap-2">
+                <button class="btn btn-sm btn-dark px-3" [routerLink]="['/gaming-pc']" [queryParams]="{category:'BUDGET GAMING'}">Explore PCs</button>
+                <button class="btn btn-sm btn-light px-3 me-2" routerLink="/contact-us">Contact Us</button>
+                <a target="_blank" href="tel:6209460626"><img src="assets/social/whatsapp2.png" width="30px"></a>
+                <a target="_blank" href="https://www.instagram.com/rahulkr.dev/"><img src="assets/social/instagram.png" width="25px"></a>
             </div>
             <div class="d-none d-md-block">
                 <div class="d-flex align-items-center gap-2">
-                    <button class="btn btn-lg btn-dark px-4" routerLink="/gaming-pc">Explore PCs</button>
+                    <button class="btn btn-lg btn-dark px-4" [routerLink]="['/gaming-pc']" [queryParams]="{category:'BUDGET GAMING'}">Explore PCs</button>
                     <button class="btn btn-lg btn-light px-4 me-2" routerLink="/contact-us">Contact Us</button>
                     <a target="_blank" href="tel:6209460626"><img src="assets/social/whatsapp2.png" width="30px"></a>
                     <a target="_blank" href="https://www.instagram.com/rahulkr.dev/"><img src="assets/social/instagram.png" width="25px"></a>

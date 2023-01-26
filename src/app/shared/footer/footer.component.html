@@ -27,7 +27,7 @@
                     <a href="#about" class="text-decoration-none text-secondary">About Company</a>
                 </div>
                 <div class="my-2">
-                    <a href="#" routerLink="/gaming-pc" class="text-decoration-none text-secondary">Gaming PCs</a>
+                    <a href="#" [routerLink]="['/gaming-pc']" [queryParams]="{category:'BUDGET GAMING'}" class="text-decoration-none text-secondary">Gaming PCs</a>
                 </div>
                 <div class="my-2">
                     <a href="#" routerLink="/contact-us" class="text-decoration-none text-secondary">Contact Us</a>

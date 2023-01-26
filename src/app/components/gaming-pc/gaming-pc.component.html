@@ -11,14 +11,14 @@
         <h3 class="m-0 p-2 px-4 cursor-pointer" [ngClass]="{'active-tab':selectedTab === 'EXTREME GAMING'}" (click)="selectedTab = 'EXTREME GAMING'">Extreme Gaming</h3>
         <h3 class="m-0 p-2 px-4 cursor-pointer" [ngClass]="{'active-tab':selectedTab === 'STREAMING'}" (click)="selectedTab = 'STREAMING'">Streaming</h3>
     </div> -->
-    <div class="d-flex align-items-center" style="margin-bottom: -4px;">
-        <div class="p-2 cursor-pointer rounded" [ngClass]="{'border border-4 border-dark':selectedTab === 'BUDGET GAMING'}" (click)="selectedTab = 'BUDGET GAMING'">
+    <div *ngIf="!isPageLoading" class="d-flex align-items-center" style="margin-bottom: -4px;">
+        <div class="p-2 cursor-pointer rounded" [ngClass]="{'border border-4 border-dark':selectedTab === 'BUDGET GAMING'}" [routerLink]="['/gaming-pc']" [queryParams]="{category:'BUDGET GAMING'}">
             <img src="assets/pc-images/budget/3.png" width="50px" height="50px" alt="">
         </div>
-        <div class="p-2 cursor-pointer rounded" [ngClass]="{'border border-4 border-dark':selectedTab === 'EXTREME GAMING'}" (click)="selectedTab = 'EXTREME GAMING'">
+        <div class="p-2 cursor-pointer rounded" [ngClass]="{'border border-4 border-dark':selectedTab === 'EXTREME GAMING'}" [routerLink]="['/gaming-pc']" [queryParams]="{category:'EXTREME GAMING'}">
             <img src="assets/pc-images/extreme/1.png" width="50px" height="50px" alt="">
         </div>
-        <div class="p-2 cursor-pointer rounded" [ngClass]="{'border border-4 border-dark':selectedTab === 'STREAMING'}" (click)="selectedTab = 'STREAMING'">
+        <div class="p-2 cursor-pointer rounded" [ngClass]="{'border border-4 border-dark':selectedTab === 'STREAMING'}" [routerLink]="['/gaming-pc']" [queryParams]="{category:'STREAMING'}">
             <img src="assets/pc-images/streaming/2.png" width="50px" height="50px" alt="">
         </div>
     </div>

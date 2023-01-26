@@ -1,7 +1,7 @@
 <div class="container">
     <div class="d-flex mt-2">
         <div class="mx-1"><a href="" class="text-decoration-none text-dark">Home</a> /</div>
-        <div class="mx-1"><a href="/gaming-pc" routerLink="/gaming-pc" class="text-decoration-none text-dark">Gaming PCs</a> /</div>
+        <div class="mx-1"><a href="" [routerLink]="['/gaming-pc']" [queryParams]="{category:'BUDGET GAMING'}" class="text-decoration-none text-dark">Gaming PCs</a> /</div>
         <div class="mx-1">{{product?.name}}</div>
     </div>
     <h1>Gaming PCs</h1>

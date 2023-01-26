@@ -1,6 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded shadow-md px-3">
     <div class="container-fluid">
-      <a class="navbar-brand" routerLink="/main" href="#">GamingCPU</a>
+      <a class="navbar-brand" routerLink="/main" href="#"> 
+        <img src="assets/logo.png" class="shadow-lg" width="30px" height="30px" alt="Logo">
+        GamingCPU</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -13,7 +15,7 @@
             <a class="nav-link" routerLinkActive="active" routerLink="/main#about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" routerLink="/gaming-pc" href="#">Gaming PCs</a>
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/gaming-pc']" [queryParams]="{category:'BUDGET GAMING'}" href="#">Gaming PCs</a>
           </li>
           <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

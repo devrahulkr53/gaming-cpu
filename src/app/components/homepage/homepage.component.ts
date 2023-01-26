@@ -18,8 +18,7 @@ export class HomepageComponent implements OnInit {
   ) { 
     this.meta.addTags([
       {name: 'description', content: 'Buy gaming pc from our customized category of PC. GamingCPU is a leading company for best prebuilt gaming pc at lowest price in India.'},
-      {name: 'author', content: ''},
-      {name: 'keywords', content: ''}
+      {name: 'keywords', content: 'gaming pc, prebuilt pc, cheap, assembled, best'}
     ])
     this.title.setTitle('Buy Prebuilt Gaming PC in India Starting From Rs.20,000')
   }
