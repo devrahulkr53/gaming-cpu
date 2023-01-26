@@ -12,6 +12,7 @@ export class ProductComponent implements OnInit {
 
   product:any;
   productId:string = '';
+  selectedTab:'settings' | 'games' | 'info' = 'settings'
   isPageLoading:boolean = true;
 
   constructor(

@@ -30,8 +30,8 @@
         <div class="col-md-12 bg-dark rounded my-5 p-3 p-md-5">
             <h3 class="display-4">About US</h3>
             <p class="text-sm">
-                GamingCPU has been registered under Ministry of Corporate Affairs, Govt. of India.
-                It was started in 26th January 2023 with an aim to provide 
+                <!-- GamingCPU has been registered under Ministry of Corporate Affairs, Govt. of India. -->
+                The organization was started in 26th January 2023 with an aim to provide 
                 best in quality gaming pc at lowest price without compromising with quality. 
                 Also we avoid local components and use only branded components like asus, msi, 
                 nvidia, corsair, etc to build pc for better user experience.
@@ -40,12 +40,12 @@
 
             </p>
             <hr class="my-4">
-            <p>You can explore more about the company like founders and employees. Click the link below to know more about the company</p>
-            <a class="btn btn-secondary btn-lg" href="#" role="button">Learn more</a>
+            <!-- <p>You can explore more about the company like founders and employees. Click the link below to know more about the company</p>
+            <a class="btn btn-secondary btn-lg" href="#" role="button">Learn more</a> -->
         </div>
     </div>
     
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div id="carouselExampleCaptions" class="carousel slide d-none d-lg-block" data-bs-ride="carousel">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -112,6 +112,43 @@
           <span class="visually-hidden">Previous</span>
         </button>
         <button class="carousel-control-next bg-dark" style="width: 8%;" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <div id="carouselExampleCaptions2" class="carousel slide d-block d-lg-none text-dark" data-bs-ride="carousel">
+        <!-- <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions2" *ngFor="let item of productList; let i = index" [ngClass]="{'active': i == 0}" [attr.data-bs-slide-to]="i"></button>
+        </div> -->
+        <div class="carousel-inner">
+            <h2>Featured Product</h2>
+            <p>Lorem ipsum is a sample text. Add here a description about featured product.</p>
+          <div class="carousel-item" *ngFor="let item of productList; let i = index" [ngClass]="{'active': i == 0}" data-bs-interval="3000">
+
+            <div class="container pb-4 px-2">
+                <div class="row">
+                    <div class="col-12 p-1">
+                        <div class="card cursor-pointer my-1" style="background-color: unset;" routerLink="/product" [queryParams]="{id:item.id}">
+                            <img [src]="item.productImage" width="120px" height="140px" class="p-2" alt="">
+                            <div class="px-2">
+                                <!-- <button class="btn btn-lg btn-secondary px-5">View Product</button> -->
+                                <h2 class="m-0">Rs. {{item.sellingPrice}}</h2>
+                                <h6 class="m-0">{{item.name}}</h6>
+                                <p>Lorem ipsum is a sample text</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          </div>
+          
+        </div>
+        <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button> -->
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>

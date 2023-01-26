@@ -40,9 +40,24 @@
         <p>{{product?.description}}</p>
     </div>
     <div class="d-flex align-items-center p-0 px-2 mt-4">
-        <h4 class="m-0 p-2 px-4">Compatible ( Games / Software )</h4>
-        <h4 class="m-0 p-2 px-4" style="border-bottom: 8px solid black;">Specification</h4>
-        <h4 class="m-0 p-2 px-4">Additional Information</h4>
+        <div class="p-3 d-flex align-items-center cursor-pointer" 
+        [ngStyle]="{'border-bottom': selectedTab === 'games' ? '8px solid black':'unset'}" 
+        (click)="selectedTab = 'games'">
+            <img src="assets/icons/games.png" width="30px" height="30px" alt="">
+            <h4 class="d-none d-lg-block px-3">Compatible ( Games / Software )</h4>
+        </div>
+        <div class="p-3 d-flex align-items-center cursor-pointer" 
+        [ngStyle]="{'border-bottom': selectedTab === 'settings' ? '8px solid black':'unset'}" 
+        (click)="selectedTab = 'settings'">
+            <img src="assets/icons/setting.png" width="30px" height="30px" alt="">
+            <h4 class="d-none d-lg-block px-3">Specification</h4>
+        </div>
+        <div class="p-3 d-flex align-items-center cursor-pointer" 
+        [ngStyle]="{'border-bottom': selectedTab === 'info' ? '8px solid black':'unset'}" 
+        (click)="selectedTab = 'info'">
+            <img src="assets/icons/info.png" width="30px" height="30px" alt="">
+            <h4 class="d-none d-lg-block px-3">Additional Information</h4>
+        </div>
     </div>
     <div class="row border border-4 border-dark p-3 rounded">
         <div class="d-flex align-items-center">
