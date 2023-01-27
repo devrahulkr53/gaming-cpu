@@ -21,12 +21,6 @@ export class ProductComponent implements OnInit {
     private meta: Meta,
     private title: Title
   ) {
-    this.meta.addTags([
-      {name: 'description', content: 'Buy gaming pc from our customized category of PC. GamingCPU is a leading company for best prebuilt gaming pc at lowest price in India.'},
-      {name: 'author', content: ''},
-      {name: 'keywords', content: ''}
-    ])
-    
     route.queryParams.subscribe(res=>{
       this.productId = res["id"]
       this.getProduct(this.productId)  
@@ -40,6 +34,17 @@ export class ProductComponent implements OnInit {
     this.productService.getProductById(id).subscribe((res:any)=>{
       this.product = res;
       this.title.setTitle(res?.productName)
+      this.meta.addTags([
+        {name: 'description', content: ''},
+        {name: 'author', content: ''},
+        {name: 'keywords', content: ''},
+        {property: "og:title", content:res?.productName},
+        {property: "og:site_name", content:"GamingCPU"},
+        {property: "og:url", content:"https://gamingcpu.in/product?id=" + id},
+        {property: "og:description", content:""},
+        {property: "og:type", content:"website"},
+        {property: "og:image", content:res?.productImage},
+      ])
       this.isPageLoading = false;
     })
   }
