@@ -8,14 +8,9 @@
 <div class="container my-4">
     <div class="row">
         <div class="col-md-4 p-2">
-            <!-- <div class="d-flex align-items-center bg-dark text-white rounded p-1 px-2 mb-3">
-                <img [src]="product?.productImage" width="50px" alt="">
-                <h5>Budget Gaming</h5>
-                <img src="assets/icons/down-arrow.png" width="40px" class="ms-auto" alt="">
-            </div> -->
             <div class="">
-                <img [src]="product?.productImage" width="80px" class="d-block d-md-none" alt="">
-                <img [src]="product?.productImage" width="240px" class="d-none d-md-block" alt="">
+                <img [src]="product?.productImage" width="80px" class="d-block d-md-none" [alt]="product?.name">
+                <img [src]="product?.productImage" width="240px" class="d-none d-md-block" [alt]="product?.name">
                 <div class="p-2">
                     <h5>{{product?.name}}</h5>
                     <p>{{product?.productName}}</p>
@@ -29,7 +24,7 @@
             <hr class="d-block d-md-none">
             <app-login *ngIf="!authService.isLoggedIn"></app-login>
             <div *ngIf="authService.isLoggedIn" class="border border-3 border-dark rounded p-3 px-4 d-flex align-items-center">
-                <img src="assets/icons/check.png" width="30px" alt="">
+                <img src="assets/icons/check.png" width="30px" alt="Check icon">
                 <h3 class="m-0 ps-2 d-none d-md-block">{{authService.currentUser.data.phoneNumber}}</h3>
                 <h5 class="m-0 ps-2 d-block d-md-none">{{authService.currentUser.data.phoneNumber}}</h5>
                 <button class="btn btn-sm btn-dark ms-auto" (click)="authService.logout()">Log Out</button>

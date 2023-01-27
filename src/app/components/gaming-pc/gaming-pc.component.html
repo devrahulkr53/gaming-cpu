@@ -13,13 +13,13 @@
     </div> -->
     <div *ngIf="!isPageLoading" class="d-flex align-items-center" style="margin-bottom: -4px;">
         <div class="p-2 cursor-pointer rounded" [ngClass]="{'border border-4 border-dark':selectedTab === 'BUDGET GAMING'}" [routerLink]="['/gaming-pc']" [queryParams]="{category:'BUDGET GAMING'}">
-            <img src="assets/pc-images/budget/3.png" width="50px" height="50px" alt="">
+            <img src="assets/pc-images/budget/3.png" width="50px" height="50px" alt="BUDGET">
         </div>
         <div class="p-2 cursor-pointer rounded" [ngClass]="{'border border-4 border-dark':selectedTab === 'EXTREME GAMING'}" [routerLink]="['/gaming-pc']" [queryParams]="{category:'EXTREME GAMING'}">
-            <img src="assets/pc-images/extreme/1.png" width="50px" height="50px" alt="">
+            <img src="assets/pc-images/extreme/1.png" width="50px" height="50px" alt="EXTREME">
         </div>
         <div class="p-2 cursor-pointer rounded" [ngClass]="{'border border-4 border-dark':selectedTab === 'STREAMING'}" [routerLink]="['/gaming-pc']" [queryParams]="{category:'STREAMING'}">
-            <img src="assets/pc-images/streaming/2.png" width="50px" height="50px" alt="">
+            <img src="assets/pc-images/streaming/2.png" width="50px" height="50px" alt="STREAMING">
         </div>
     </div>
     <div *ngIf="!isPageLoading" class="row text-center border border-5 border-dark pt-3" style="border-bottom: none !important;border-left: none !important;border-right: none !important;">
@@ -29,8 +29,8 @@
         <p *ngIf="selectedTab === 'STREAMING'" class="text-start"> Top of the line Streaming ready gaming system. </p>
         <div *ngFor="let item of productList" [ngClass]="{'d-none':selectedTab !== item?.name}" class="col-6 col-md-3 p-1">
             <div class="card cursor-pointer bg-dark text-white my-1" [routerLink]="['/product']" [queryParams]="{id:item.id}">
-                <img [src]="item.productImage" width="70%" height="280px" class="d-none d-md-block mx-auto p-4" alt="">
-                <img [src]="item.productImage" width="90%" height="180px" class="d-block d-md-none mx-auto p-4" alt="">
+                <img [src]="item.productImage" width="70%" height="280px" class="d-none d-md-block mx-auto p-4" [alt]="item?.name">
+                <img [src]="item.productImage" width="90%" height="180px" class="d-block d-md-none mx-auto p-4" [alt]="item?.name">
                 <!-- <div class="p-2">
                     <button class="btn btn-lg btn-secondary px-5">View Product</button>
                 </div> -->

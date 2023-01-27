@@ -14,21 +14,21 @@
 <div *ngIf="!isPageLoading" class="container-fluid my-3">
     <div class="row py-3">
         <div class="col-md-12 d-flex justify-content-between">
-            <img [src]="product?.productImage" class="d-none d-md-block p-3 px-5" width="400px" alt="">
+            <img [src]="product?.productImage" class="d-none d-md-block p-3 px-5" width="400px" [alt]="product?.name">
             <div>
-                <img [src]="product?.productImage" class="d-md-none d-block" width="150px" alt="">
+                <img [src]="product?.productImage" class="d-md-none d-block" width="150px" [alt]="product?.name">
                 <h3 class="display-4" style="font-weight: 400;">{{product?.productName}}</h3>
                 <h6 class="display-6"><s style="color: darkred;">Rs. {{product?.marketPrice}}</s> Rs. {{product?.sellingPrice}}</h6>
                 <div class="d-flex align-items-center my-1">
-                    <img src="assets/icons/check.png" width="20px" height="20px" alt="">
+                    <img src="assets/icons/check.png" width="20px" height="20px" alt="Check icon">
                     <strong class="px-2">Free Delivery</strong>
                 </div>
                 <div class="d-flex align-items-center my-1">
-                    <img src="assets/icons/check.png" width="20px" height="20px" alt="">
+                    <img src="assets/icons/check.png" width="20px" height="20px" alt="Check icon">
                     <strong class="px-2">Cash on delivery available</strong>
                 </div>
                 <div class="d-flex align-items-center my-1">
-                    <img src="assets/icons/check.png" width="20px" height="20px" alt="">
+                    <img src="assets/icons/check.png" width="20px" height="20px" alt="Check icon">
                     <strong class="px-2">Only preferred brand components are used.</strong>
                 </div>
                 <button class="btn btn-lg btn-dark px-5 mt-2" routerLink="/checkout" [queryParams]="{id:productId}">Purchase Now</button>
@@ -43,45 +43,45 @@
         <div class="p-3 d-flex align-items-center cursor-pointer" 
         [ngStyle]="{'border-bottom': selectedTab === 'games' ? '8px solid black':'unset'}" 
         (click)="selectedTab = 'games'">
-            <img src="assets/icons/games.png" width="30px" height="30px" alt="">
+            <img src="assets/icons/games.png" width="30px" height="30px" alt="Games icon">
             <h4 class="d-none d-lg-block px-3">Compatible ( Games / Software )</h4>
         </div>
         <div class="p-3 d-flex align-items-center cursor-pointer" 
         [ngStyle]="{'border-bottom': selectedTab === 'settings' ? '8px solid black':'unset'}" 
         (click)="selectedTab = 'settings'">
-            <img src="assets/icons/setting.png" width="30px" height="30px" alt="">
+            <img src="assets/icons/setting.png" width="30px" height="30px" alt="Settings icon">
             <h4 class="d-none d-lg-block px-3">Specification</h4>
         </div>
         <div class="p-3 d-flex align-items-center cursor-pointer" 
         [ngStyle]="{'border-bottom': selectedTab === 'info' ? '8px solid black':'unset'}" 
         (click)="selectedTab = 'info'">
-            <img src="assets/icons/info.png" width="30px" height="30px" alt="">
+            <img src="assets/icons/info.png" width="30px" height="30px" alt="Information icon">
             <h4 class="d-none d-lg-block px-3">Additional Information</h4>
         </div>
     </div>
     <div class="row border border-4 border-dark p-3 rounded">
         <div class="d-flex align-items-center">
-            <img src="assets/icons/cpu.png" width="28px" height="28px" alt="">
+            <img src="assets/icons/cpu.png" width="28px" height="28px" alt="CPU icon">
             <h5 class="px-2 m-0">{{product?.specification?.processor}}</h5>
         </div>
         <div class="d-flex align-items-center">
-            <img src="assets/icons/ram.png" width="28px" height="28px" alt="">
+            <img src="assets/icons/ram.png" width="28px" height="28px" alt="RAM icon">
             <h5 class="px-2 m-0">{{product?.specification?.ram}}</h5>
         </div>
         <div class="d-flex align-items-center">
-            <img src="assets/icons/gpu.png" width="28px" height="28px" alt="">
+            <img src="assets/icons/gpu.png" width="28px" height="28px" alt="GPU icon">
             <h5 class="px-2 m-0">{{product?.specification?.graphics}}</h5>
         </div>
         <div class="d-flex align-items-center">
-            <img src="assets/icons/hard-drive.png" width="28px" height="28px" alt="">
+            <img src="assets/icons/hard-drive.png" width="28px" height="28px" alt="Hard drive icon">
             <h5 class="px-2 m-0">{{product?.specification?.harddrive}}</h5>
         </div>
         <div class="d-flex align-items-center">
-            <img src="assets/icons/ssd-drive.png" width="28px" height="28px" alt="">
+            <img src="assets/icons/ssd-drive.png" width="28px" height="28px" alt="SSD drive icon">
             <h5 class="px-2 m-0">{{product?.specification?.ssd}}</h5>
         </div>
         <div class="d-flex align-items-center">
-            <img src="assets/icons/height.png" width="28px" height="28px" alt="">
+            <img src="assets/icons/height.png" width="28px" height="28px" alt="height measuring scale icon">
             <h5 class="px-2 m-0">{{product?.specification?.height}}</h5>
         </div>
         <hr class="my-3 text-white">
