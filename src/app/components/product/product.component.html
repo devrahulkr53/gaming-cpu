@@ -1,7 +1,7 @@
 <div class="container">
     <div class="d-flex mt-2">
         <div class="mx-1"><a href="" class="text-decoration-none text-dark">Home</a> /</div>
-        <div class="mx-1"><a href="" [routerLink]="['/gaming-pc']" [queryParams]="{category:'BUDGET GAMING'}" class="text-decoration-none text-dark">Gaming PCs</a> /</div>
+        <div class="mx-1"><a href="/gaming-pc?category=BUDGET GAMING" class="text-decoration-none text-dark">Gaming PCs</a> /</div>
         <div class="mx-1">{{product?.name}}</div>
     </div>
     <h1>Gaming PCs</h1>
@@ -31,7 +31,7 @@
                     <img src="assets/icons/check.png" width="20px" height="20px" alt="Check icon">
                     <strong class="px-2">Only preferred brand components are used.</strong>
                 </div>
-                <button class="btn btn-lg btn-dark px-5 mt-2" routerLink="/checkout" [queryParams]="{id:productId}">Purchase Now</button>
+                <a [href]="'/checkout?id='+productId"><button class="btn btn-lg btn-dark px-5 mt-2">Purchase Now</button></a>
             </div>
         </div>
     </div>

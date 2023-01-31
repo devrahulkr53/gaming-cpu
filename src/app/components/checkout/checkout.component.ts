@@ -97,6 +97,7 @@ export class CheckoutComponent implements OnInit {
     let payload = {
       ...this.billingForm.value,
       userId: this.authService.userData.value.data.uid,
+      productId: this.productId,
       phoneNumber: this.authService.userData.value.data.phoneNumber
     }
     this.checkoutService.placeOrder(payload).subscribe((res:any)=>{

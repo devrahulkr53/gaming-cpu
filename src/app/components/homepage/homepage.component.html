@@ -5,15 +5,15 @@
             <p class="">GamingCPU is a leading company for best gaming pc at lowest price in India. Purchase your gaming
                 pc from our customized category of PCs.</p>
             <div class="d-flex d-md-none align-items-center gap-2">
-                <button class="btn btn-sm btn-dark px-3" [routerLink]="['/gaming-pc']" [queryParams]="{category:'BUDGET GAMING'}">Explore PCs</button>
-                <button class="btn btn-sm btn-light px-3 me-2" routerLink="/contact-us">Contact Us</button>
+                <a [href]="'/gaming-pc?category=BUDGET GAMING'"><button class="btn btn-sm btn-dark px-3">Explore PCs</button></a>
+                <a href="/contact-us"><button class="btn btn-sm btn-light px-3 me-2">Contact Us</button></a>
                 <a target="_blank" href="tel:6209460626"><img src="assets/social/whatsapp2.png" width="30px" alt="Whatsapp icon"></a>
                 <a target="_blank" href="https://www.instagram.com/rahulkr.dev/"><img src="assets/social/instagram.png" width="25px"></a>
             </div>
             <div class="d-none d-md-block">
                 <div class="d-flex align-items-center gap-2">
-                    <button class="btn btn-lg btn-dark px-4" [routerLink]="['/gaming-pc']" [queryParams]="{category:'BUDGET GAMING'}">Explore PCs</button>
-                    <button class="btn btn-lg btn-light px-4 me-2" routerLink="/contact-us">Contact Us</button>
+                    <a [href]="'/gaming-pc?category=BUDGET GAMING'"><button class="btn btn-lg btn-dark px-4">Explore PCs</button></a>
+                    <a href="/contact-us"><button class="btn btn-lg btn-light px-4 me-2">Contact Us</button></a>
                     <a target="_blank" href="tel:6209460626"><img src="assets/social/whatsapp2.png" width="30px" alt="Whatsapp icon"></a>
                     <a target="_blank" href="https://www.instagram.com/rahulkr.dev/"><img src="assets/social/instagram.png" width="25px" alt="Instagram icon"></a>
                     <!-- <a target="_blank" href="tel:6209460626"><img src="assets/social/telephone.png" width="35px" alt="Telephone icon"></a> -->
@@ -59,14 +59,14 @@
             <div class="container">
                 <div class="row">
                     <div *ngFor="let item of productList?.slice(0,4)" class="col-6 col-md-3 p-1">
-                        <div class="card border border-3 border-dark cursor-pointer text-white my-1" style="background-color: unset;" routerLink="/product" [queryParams]="{id:item.id}">
+                        <a [href]="'/product?id='+item.id"><div class="card border border-3 border-dark cursor-pointer text-white my-1" style="background-color: unset;">
                             <img [src]="item.productImage" width="80%" height="280px" class="mx-auto p-4" [alt]="item?.name">
                             <div class="p-2 text-center">
                                 <!-- <button class="btn btn-lg btn-secondary px-5">View Product</button> -->
                                 <h2>Rs. {{item.sellingPrice}}</h2>
                                 <h6>{{item.name}}</h6>
                             </div>
-                        </div>
+                        </div></a>
                     </div>
                 </div>
             </div>
@@ -77,14 +77,14 @@
             <div class="container">
                 <div class="row">
                     <div *ngFor="let item of productList?.slice(4,8)" class="col-6 col-md-3 p-1">
-                        <div class="card border border-3 border-dark cursor-pointer text-white my-1" style="background-color: unset;" routerLink="/product" [queryParams]="{id:item.id}">
+                        <a [href]="'/product?id='+item.id"><div class="card border border-3 border-dark cursor-pointer text-white my-1" style="background-color: unset;">
                             <img [src]="item.productImage" width="80%" height="280px" class="mx-auto p-4" [alt]="item?.name">
                             <div class="p-2 text-center">
                                 <!-- <button class="btn btn-lg btn-secondary px-5">View Product</button> -->
                                 <h2>Rs. {{item.sellingPrice}}</h2>
                                 <h6>{{item.name}}</h6>
                             </div>
-                        </div>
+                        </div></a>
                     </div>
                 </div>
             </div>
@@ -95,14 +95,14 @@
             <div class="container">
                 <div class="row">
                     <div *ngFor="let item of productList?.slice(8,12)" class="col-6 col-md-3 p-1">
-                        <div class="card border border-3 border-dark cursor-pointer text-white my-1" style="background-color: unset;" routerLink="/product" [queryParams]="{id:item.id}">
+                        <a [href]="'/product?id='+item.id"><div class="card border border-3 border-dark cursor-pointer text-white my-1" style="background-color: unset;">
                             <img [src]="item.productImage" width="80%" height="280px" class="mx-auto p-4" [alt]="item?.name">
                             <div class="p-2 text-center">
                                 <!-- <button class="btn btn-lg btn-secondary px-5">View Product</button> -->
                                 <h2>Rs. {{item.sellingPrice}}</h2>
                                 <h6>{{item.name}}</h6>
                             </div>
-                        </div>
+                        </div></a>
                     </div>
                 </div>
             </div>
@@ -130,7 +130,7 @@
             <div class="container pb-4 px-2">
                 <div class="row">
                     <div class="col-12 p-1">
-                        <div class="card cursor-pointer my-1" style="background-color: unset;" routerLink="/product" [queryParams]="{id:item.id}">
+                        <a [href]="'/product?id='+item.id"><div class="card cursor-pointer my-1" style="background-color: unset;">
                             <img [src]="item.productImage" width="120px" height="140px" class="p-2" [alt]="item?.name">
                             <div class="px-2">
                                 <!-- <button class="btn btn-lg btn-secondary px-5">View Product</button> -->
@@ -138,7 +138,7 @@
                                 <h6 class="m-0">{{item.name}}</h6>
                                 <p>Lorem ipsum is a sample text</p>
                             </div>
-                        </div>
+                        </div></a>
                     </div>
                 </div>
             </div>

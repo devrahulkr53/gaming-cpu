@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded shadow-md px-3">
     <div class="container-fluid">
-      <a class="navbar-brand d-flex align-items-center" routerLink="/main" href="#"> 
+      <a class="navbar-brand d-flex align-items-center" href="/main"> 
         <img src="assets/logo.png" class="shadow-lg" width="40px" height="40px" alt="Company Logo GamingCPU">
         <div class="h4 m-0">Gaming CPU</div>
       </a>
@@ -10,13 +10,13 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" routerLink="/main" aria-current="page" href="#">Home</a>
+            <a class="nav-link" aria-current="page" href="/main">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" routerLink="/main#about">About</a>
+            <a class="nav-link" href="/main#about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" [routerLink]="['/gaming-pc']" [queryParams]="{category:'BUDGET GAMING'}" href="#">Gaming PCs</a>
+            <a class="nav-link" href="/gaming-pc?category=BUDGET GAMING">Gaming PCs</a>
           </li>
           <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -30,7 +30,7 @@
             </ul>
           </li> -->
           <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" routerLink="/contact-us" href="#">Contact Us</a>
+            <a class="nav-link" href="/contact-us">Contact Us</a>
           </li>
           <li class="nav-item">
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Build PC</a>

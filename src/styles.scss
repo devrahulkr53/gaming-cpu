@@ -7,6 +7,12 @@ input:-webkit-autofill:active{
     -webkit-box-shadow: 0 0 0 30px gray inset !important;
 }
 
+body {
+    a {
+        text-decoration: none;
+    }
+}
+
 .cursor-pointer {
     cursor: pointer;
 }
