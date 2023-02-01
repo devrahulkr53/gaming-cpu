@@ -26,7 +26,7 @@ export class HomepageComponent implements OnInit {
       {property: "og:type", content:"website"},
       {property: "og:image", content:"https://gamingcpu.in/assets/logo.png"},
     ])
-    this.title.setTitle('Buy Prebuilt Gaming PC in India Starting From Rs.20,000')
+    this.title.setTitle('Best Assembled Gaming PC in India Under 30000 - GamingCPU')
   }
 
   ngOnInit(): void {

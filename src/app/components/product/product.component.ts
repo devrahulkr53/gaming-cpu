@@ -24,6 +24,17 @@ export class ProductComponent implements OnInit {
     route.queryParams.subscribe(res=>{
       this.productId = res["id"]
       this.getProduct(this.productId)  
+      this.title.setTitle(res["name"])
+      this.meta.addTags([
+        {name: 'description', content: ''},
+        {name: 'keywords', content: ''},
+        {property: "og:title", content:res["name"]},
+        {property: "og:site_name", content:"GamingCPU"},
+        {property: "og:url", content:"https://gamingcpu.in/product?id=" + res["id"]},
+        {property: "og:description", content:""},
+        {property: "og:type", content:"website"},
+        {property: "og:image", content:res["productImage"]},
+      ])
     })
   }
 
@@ -33,18 +44,6 @@ export class ProductComponent implements OnInit {
   getProduct(id:string){
     this.productService.getProductById(id).subscribe((res:any)=>{
       this.product = res;
-      this.title.setTitle(res?.productName)
-      this.meta.addTags([
-        {name: 'description', content: ''},
-        {name: 'author', content: ''},
-        {name: 'keywords', content: ''},
-        {property: "og:title", content:res?.productName},
-        {property: "og:site_name", content:"GamingCPU"},
-        {property: "og:url", content:"https://gamingcpu.in/product?id=" + id},
-        {property: "og:description", content:""},
-        {property: "og:type", content:"website"},
-        {property: "og:image", content:res?.productImage},
-      ])
       this.isPageLoading = false;
     })
   }

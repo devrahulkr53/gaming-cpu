@@ -67,7 +67,7 @@ export class CheckoutComponent implements OnInit {
       {name: 'author', content: ''},
       {name: 'keywords', content: ''}
     ])
-    this.title.setTitle('Checkout | GamingCPU')
+    this.title.setTitle('Checkout - GamingCPU')
     
     route.queryParams.subscribe(res=>{
       this.productId = res["id"]

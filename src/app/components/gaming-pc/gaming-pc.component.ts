@@ -21,11 +21,10 @@ export class GamingPcComponent implements OnInit {
     private title: Title
   ) {
     this.meta.addTags([
-      {name: 'description', content: ''},
-      {name: 'author', content: ''},
+      {name: 'description', content: 'Are you looking for gaming computers at lowest price. Find PC that suits best for your purpose.'},
       {name: 'keywords', content: ''}
     ])
-    this.title.setTitle('Budget, Extreme and Streaming Gaming PC')
+    this.title.setTitle('Budget, Extreme and Streaming PC - GamingCPU')
     route.queryParams.subscribe((res:any)=>{
       console.log(res)
       this.selectedTab = res?.category || 'BUDGET GAMING';
