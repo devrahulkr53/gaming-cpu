@@ -13,12 +13,15 @@
 </div>
 <div *ngIf="!isPageLoading" class="container-fluid my-3">
     <div class="row py-3">
-        <div class="col-md-12 d-flex justify-content-between">
-            <img [src]="product?.productImage" class="d-none d-md-block p-3 px-5" width="400px" [alt]="product?.name">
+        <div class="col-md-12 d-flex align-items-center justify-content-between">
+            <img [src]="product?.productImage" class="d-none d-lg-block p-3 px-5" width="400px" [alt]="product?.name">
             <div>
-                <img [src]="product?.productImage" class="d-md-none d-block" width="150px" [alt]="product?.name">
-                <h3 class="display-4" style="font-weight: 400;">{{product?.productName}}</h3>
-                <h6 class="display-6 mb-0"><s style="color: darkred;">Rs. {{product?.marketPrice}}</s> Rs. {{product?.sellingPrice}}</h6>
+                <img [src]="product?.productImage" class="d-lg-none d-block" width="150px" [alt]="product?.name">
+                <h3 class="display-6" style="font-weight: 400;">{{product?.productName}}</h3>
+                <h6 class="display-6 mb-0" style="font-weight: 700;">
+                    <s style="color: darkred;">Rs. {{product?.marketPrice}}</s> 
+                    Rs. {{product?.sellingPrice}}
+                </h6>
                 <small class="text-dark">Inclusive of all taxes.</small>
                 <div class="d-flex align-items-center my-1">
                     <img src="assets/icons/check.png" width="20px" height="20px" alt="Check icon">
@@ -32,7 +35,12 @@
                     <img src="assets/icons/check.png" width="20px" height="20px" alt="Check icon">
                     <strong class="px-2">7 days replacement warranty.</strong>
                 </div>
-                <a [href]="'/checkout?id='+productId"><button class="btn btn-lg btn-dark px-5 mt-2">Purchase Now</button></a>
+                <div class="d-flex align-items-center my-1">
+                    <img src="assets/icons/close.png" width="20px" height="20px" alt="Check icon">
+                    <strong class="px-2">Keyboard, Mouse and Moniter</strong>
+                </div>
+                <a [href]="'/checkout?id='+productId" class="d-none d-md-block"><button class="btn btn-lg btn-dark px-5 mt-2">Purchase Now</button></a>
+                <a [href]="'/checkout?id='+productId" class="d-block d-md-none mobile-purchase-button"><button class="btn btn-lg btn-dark shadow-md pt-3 pb-4 w-100">Purchase Now</button></a>
             </div>
         </div>
     </div>
@@ -40,24 +48,24 @@
         <h2>Product Description</h2>
         <p>{{product?.description}}</p>
     </div> -->
-    <div class="d-flex align-items-center p-0 px-2 mt-4">
-        <div class="p-3 d-flex align-items-center cursor-pointer" 
+    <div class="d-flex align-items-center p-0 px-4 mt-4">
+        <div class="p-3 pb-2 d-flex align-items-center cursor-pointer" 
         [ngStyle]="{'border-bottom': selectedTab === 'games' ? '8px solid black':'unset'}" 
         (click)="selectedTab = 'games'">
             <img src="assets/icons/games.png" width="30px" height="30px" alt="Games icon">
-            <h4 class="d-none d-lg-block px-3">Compatible ( Games / Software )</h4>
+            <h4 class="d-none d-xl-block px-3">Compatible ( Games / Software )</h4>
         </div>
-        <div class="p-3 d-flex align-items-center cursor-pointer" 
+        <div class="p-3 pb-2 d-flex align-items-center cursor-pointer" 
         [ngStyle]="{'border-bottom': selectedTab === 'settings' ? '8px solid black':'unset'}" 
         (click)="selectedTab = 'settings'">
             <img src="assets/icons/setting.png" width="30px" height="30px" alt="Settings icon">
-            <h4 class="d-none d-lg-block px-3">Specification</h4>
+            <h4 class="d-none d-xl-block px-3">Specification</h4>
         </div>
-        <div class="p-3 d-flex align-items-center cursor-pointer" 
+        <div class="p-3 pb-2 d-flex align-items-center cursor-pointer" 
         [ngStyle]="{'border-bottom': selectedTab === 'info' ? '8px solid black':'unset'}" 
         (click)="selectedTab = 'info'">
             <img src="assets/icons/info.png" width="30px" height="30px" alt="Information icon">
-            <h4 class="d-none d-lg-block px-3">Additional Information</h4>
+            <h4 class="d-none d-xl-block px-3">Additional Information</h4>
         </div>
     </div>
     <div class="row border border-4 border-dark p-3 rounded">
@@ -86,7 +94,7 @@
             <h5 class="px-2 m-0">{{product?.specification?.height}}</h5>
         </div>
         <hr class="my-3 text-white">
-        <h5>Dimensions: 20cm x 30cm x 5cm</h5>
+        <!-- <h5>Dimensions: 20cm x 30cm x 5cm</h5> -->
         <h5>Seller: {{product?.seller}}</h5>
 
     </div>

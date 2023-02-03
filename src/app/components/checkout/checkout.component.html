@@ -20,7 +20,7 @@
             </div>
             <h5>Total Amount: Rs. {{product?.sellingPrice}}</h5>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8 p-0">
             <hr class="d-block d-md-none">
             <app-login *ngIf="!authService.isLoggedIn"></app-login>
             <div *ngIf="authService.isLoggedIn" class="border border-3 border-dark rounded p-3 px-4 d-flex align-items-center">
@@ -79,7 +79,8 @@
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-lg btn-dark my-3 px-3" [disabled]="!authService.isLoggedIn">PLACE ORDER with COD</button>
+                <button type="submit" class="d-none d-md-block btn btn-lg btn-dark my-3 px-3" [disabled]="!authService.isLoggedIn">PLACE ORDER with COD</button>
+                <button type="submit" class="d-block d-md-none btn btn-lg btn-dark mobile-checkout-button pt-3 pb-4" [disabled]="!authService.isLoggedIn">PLACE ORDER with COD</button>
             </form>
         </div>
         

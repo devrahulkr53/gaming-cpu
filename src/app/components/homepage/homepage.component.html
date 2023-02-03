@@ -1,7 +1,7 @@
 <div class="container-fluid text-white">
     <div class="row p-1 py-5 align-items-center">
         <div class="col-md-7">
-            <h1 class="display-2" style="font-weight: 700;">Buy Prebuilt Gaming PC Starting From Rs.20,000</h1>
+            <h1 class="display-2" style="font-weight: 700;">Buy Prebuilt Gaming PC Under Rs.30,000</h1>
             <p class="">GamingCPU is a leading company for best gaming pc at lowest price in India. Purchase your gaming
                 pc from our customized category of PCs.</p>
             <div class="d-flex d-md-none align-items-center gap-2">
@@ -33,8 +33,7 @@
             <h3 class="display-4">About US</h3>
             <p class="text-sm">
                 <!-- GamingCPU has been registered under Ministry of Corporate Affairs, Govt. of India. -->
-                The organization was started in 26th January 2023 with an aim to provide 
-                best in quality gaming pc at lowest price without compromising with quality. 
+                We aim to provide best in quality gaming pc at lowest price without compromising with quality. 
                 Also we avoid local components and use only branded components like asus, msi, 
                 nvidia, corsair, etc to build pc for better user experience.
                 We focus to build gaming pc that supports most of the pc and playstation 
@@ -123,20 +122,17 @@
           <button type="button" data-bs-target="#carouselExampleCaptions2" *ngFor="let item of productList; let i = index" [ngClass]="{'active': i == 0}" [attr.data-bs-slide-to]="i"></button>
         </div> -->
         <div class="carousel-inner">
-            <h2>Featured Product</h2>
-            <p>Lorem ipsum is a sample text. Add here a description about featured product.</p>
           <div class="carousel-item" *ngFor="let item of productList; let i = index" [ngClass]="{'active': i == 0}" data-bs-interval="3000">
 
-            <div class="container pb-4 px-2">
+            <div class="container px-0">
                 <div class="row">
-                    <div class="col-12 p-1">
-                        <a [href]="'/product?id='+item.id" class="text-dark"><div class="card cursor-pointer my-1" style="background-color: unset;">
-                            <img [src]="item.productImage" width="120px" height="140px" class="p-2" [alt]="item?.name">
-                            <div class="px-2">
+                    <div class="col-12 p-0 text-white">
+                        <a [href]="'/product?id='+item.id" class="text-dark"><div class="cursor-pointer my-1" style="background-color: unset;">
+                            <img [src]="item.productImage" width="80%" height="280px" class="p-0" [alt]="item?.name">
+                            <div class="p-2 px-3">
                                 <!-- <button class="btn btn-lg btn-secondary px-5">View Product</button> -->
-                                <h2 class="m-0">Rs. {{item.sellingPrice}}</h2>
+                                <h2 class="m-0 display-3" style="font-weight: 500;">Rs. {{item.sellingPrice}}</h2>
                                 <h6 class="m-0">{{item.name}}</h6>
-                                <p>Lorem ipsum is a sample text</p>
                             </div>
                         </div></a>
                     </div>
