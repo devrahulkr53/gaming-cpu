@@ -28,11 +28,10 @@
             <img src="assets/pc-images/streaming/2.png" width="100%" alt="PC">
         </div>
     </div>
-    <div id="about" class="row">
+    <!-- <div id="about" class="row">
         <div class="col-md-12 bg-dark rounded my-5 p-3 p-md-5">
             <h3 class="display-4">About US</h3>
             <p class="text-sm">
-                <!-- GamingCPU has been registered under Ministry of Corporate Affairs, Govt. of India. -->
                 We aim to provide best in quality gaming pc at lowest price without compromising with quality. 
                 Also we avoid local components and use only branded components like asus, msi, 
                 nvidia, corsair, etc to build pc for better user experience.
@@ -41,10 +40,8 @@
 
             </p>
             <hr class="my-4">
-            <!-- <p>You can explore more about the company like founders and employees. Click the link below to know more about the company</p>
-            <a class="btn btn-secondary btn-lg" href="#" role="button">Learn more</a> -->
         </div>
-    </div>
+    </div> -->
     
     <div id="carouselExampleCaptions" class="carousel slide d-none d-lg-block" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -128,7 +125,7 @@
                 <div class="row">
                     <div class="col-12 p-0 text-white">
                         <a [href]="'/product?id='+item.id" class="text-dark"><div class="cursor-pointer my-1" style="background-color: unset;">
-                            <img [src]="item.productImage" width="80%" height="280px" class="p-0" [alt]="item?.name">
+                            <img [src]="item.productImage" width="80%" class="p-0" [alt]="item?.name">
                             <div class="p-2 px-3">
                                 <!-- <button class="btn btn-lg btn-secondary px-5">View Product</button> -->
                                 <h2 class="m-0 display-3" style="font-weight: 500;">Rs. {{item.sellingPrice}}</h2>
