@@ -24,9 +24,9 @@
     </div>
     <div *ngIf="!isPageLoading" class="row text-center border border-5 border-dark pt-3" style="border-bottom: none !important;border-left: none !important;border-right: none !important;">
         <h3 class="text-start"> {{selectedTab}} </h3>
-        <p *ngIf="selectedTab === 'BUDGET GAMING'" class="text-start"> Enjoy all your favourite latest games without breaking the bank. </p>
-        <p *ngIf="selectedTab === 'EXTREME GAMING'" class="text-start"> Extreme grade with high-end 4k and VR gaming experience. </p>
-        <p *ngIf="selectedTab === 'STREAMING'" class="text-start"> Top of the line Streaming ready gaming system. </p>
+        <p *ngIf="selectedTab === 'BUDGET GAMING'" class="text-start"> A budget gaming PC offers an affordable and accessible way to enjoy video games without breaking the bank. It is designed to deliver a smooth gaming experience with limited investment. </p>
+        <p *ngIf="selectedTab === 'EXTREME GAMING'" class="text-start"> An extreme gaming PC is a high-performance machine designed for the most demanding gamers. It is equipped with the latest and greatest hardware to handle the most graphically intense video games and provides an immersive gaming experience. </p>
+        <p *ngIf="selectedTab === 'STREAMING'" class="text-start"> A streaming PC is a computer specifically designed for live streaming video games or other multimedia content. It has powerful hardware and efficient software to provide smooth and seamless video playback, ensuring high-quality streams for viewers. </p>
         <div *ngFor="let item of productList" [ngClass]="{'d-none':selectedTab !== item?.name}" class="col-6 col-md-4 col-lg-3 p-1">
             <a [href]="'/product?id='+item.id+'&name='+item.productName+'&image='+item.productImage"><div class="card cursor-pointer bg-dark text-white my-1">
                 <img [src]="item.productImage" width="70%" height="280px" class="d-none d-md-block mx-auto p-4" [alt]="item?.name">

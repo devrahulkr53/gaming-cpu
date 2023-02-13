@@ -2,7 +2,8 @@
     <div class="d-flex mt-2">
         <div class="mx-1"><a href="" class="text-decoration-none text-dark">Home</a> /</div>
         <div class="mx-1"><a href="/gaming-pc?category=BUDGET GAMING" class="text-decoration-none text-dark">Gaming PCs</a> /</div>
-        <div class="mx-1">{{product?.name}}</div>
+        <div class="mx-1"><a [href]="'/gaming-pc?category='+product?.name" class="text-decoration-none text-dark"> {{product?.name}} </a> /</div>
+        <!-- <div class="mx-1">{{productId}}</div> -->
     </div>
     <h1>Gaming PCs</h1>
 </div>
@@ -44,16 +45,12 @@
             </div>
         </div>
     </div>
-    <!-- <div class="row bg-dark text-white rounded px-3 py-4 my-4">
-        <h2>Product Description</h2>
-        <p>{{product?.description}}</p>
-    </div> -->
     <div class="d-flex align-items-center p-0 px-4 mt-4">
         <div class="p-3 pb-2 d-flex align-items-center cursor-pointer" 
         [ngStyle]="{'border-bottom': selectedTab === 'games' ? '8px solid black':'unset'}" 
         (click)="selectedTab = 'games'">
             <img src="assets/icons/games.png" width="30px" height="30px" alt="Games icon">
-            <h4 class="d-none d-xl-block px-3">Compatible ( Games / Software )</h4>
+            <h4 class="d-none d-xl-block px-3">Installed ( Games / Software )</h4>
         </div>
         <div class="p-3 pb-2 d-flex align-items-center cursor-pointer" 
         [ngStyle]="{'border-bottom': selectedTab === 'settings' ? '8px solid black':'unset'}" 
@@ -64,38 +61,75 @@
         <div class="p-3 pb-2 d-flex align-items-center cursor-pointer" 
         [ngStyle]="{'border-bottom': selectedTab === 'info' ? '8px solid black':'unset'}" 
         (click)="selectedTab = 'info'">
-            <img src="assets/icons/info.png" width="30px" height="30px" alt="Information icon">
-            <h4 class="d-none d-xl-block px-3">Additional Information</h4>
-        </div>
+        <img src="assets/icons/info.png" width="30px" height="30px" alt="Information icon">
+        <h4 class="d-none d-xl-block px-3">Additional Information</h4>
     </div>
-    <div class="row border border-4 border-dark p-3 rounded">
+    </div>
+    <div *ngIf="selectedTab === 'games'" class="row border border-4 border-dark p-3 rounded">
+        <div class="d-md-none">
+            <h5 class="m-0">Installed ( Games / Software )</h5>
+            <hr class="my-3 text-white">
+        </div>
+        <div class="d-flex align-items-center my-1">
+            <img src="assets/icons/windows.png" width="28px" height="28px" alt="Windows 10 icon">
+            <h6 class="px-2 m-0">Microsoft Windows 10</h6>
+        </div>
+        <div class="d-flex align-items-center my-1">
+            <img src="assets/icons/gta3.png" width="28px" height="28px" alt="GTA icon">
+            <h6 class="px-2 m-0">Grand Theft Auto ( GTA 3 )</h6>
+        </div>
+        <div class="d-flex align-items-center my-1">
+            <img src="assets/icons/gta-san.png" width="28px" height="28px" alt="GTA icon">
+            <h6 class="px-2 m-0">GTA San Andreas</h6>
+        </div>
+        <div class="d-flex align-items-center my-1">
+            <img src="assets/icons/max-payne.png" width="28px" height="28px" alt="GTA icon">
+            <h6 class="px-2 m-0">Max Payne 1</h6>
+        </div>
+        <!-- <h5>Dimensions: 20cm x 30cm x 5cm</h5> -->
+    </div>
+    <div *ngIf="selectedTab === 'settings'" class="row border border-4 border-dark p-3 rounded">
+        <div class="d-md-none">
+            <h5 class="m-0">Specification</h5>
+            <hr class="my-3 text-white">
+        </div>
         <div class="d-flex align-items-center">
             <img src="assets/icons/cpu.png" width="28px" height="28px" alt="CPU icon">
-            <h5 class="px-2 m-0">{{product?.specification?.processor}}</h5>
+            <h6 class="px-2 m-0">{{product?.specification?.processor}}</h6>
         </div>
         <div class="d-flex align-items-center">
             <img src="assets/icons/ram.png" width="28px" height="28px" alt="RAM icon">
-            <h5 class="px-2 m-0">{{product?.specification?.ram}}</h5>
+            <h6 class="px-2 m-0">{{product?.specification?.ram}}</h6>
         </div>
         <div class="d-flex align-items-center">
             <img src="assets/icons/gpu.png" width="28px" height="28px" alt="GPU icon">
-            <h5 class="px-2 m-0">{{product?.specification?.graphics}}</h5>
+            <h6 class="px-2 m-0">{{product?.specification?.graphics}}</h6>
         </div>
         <div class="d-flex align-items-center">
             <img src="assets/icons/hard-drive.png" width="28px" height="28px" alt="Hard drive icon">
-            <h5 class="px-2 m-0">{{product?.specification?.harddrive}}</h5>
+            <h6 class="px-2 m-0">{{product?.specification?.harddrive}}</h6>
         </div>
         <div class="d-flex align-items-center">
             <img src="assets/icons/ssd-drive.png" width="28px" height="28px" alt="SSD drive icon">
-            <h5 class="px-2 m-0">{{product?.specification?.ssd}}</h5>
+            <h6 class="px-2 m-0">{{product?.specification?.ssd}}</h6>
         </div>
-        <div class="d-flex align-items-center">
-            <img src="assets/icons/height.png" width="28px" height="28px" alt="height measuring scale icon">
-            <h5 class="px-2 m-0">{{product?.specification?.height}}</h5>
-        </div>
-        <hr class="my-3 text-white">
-        <!-- <h5>Dimensions: 20cm x 30cm x 5cm</h5> -->
-        <h5>Seller: {{product?.seller}}</h5>
-
     </div>
+    <div *ngIf="selectedTab === 'info'" class="row border border-4 border-dark p-3 rounded">
+        <h5>Dimensions: {{product?.caseDimensions}}</h5>
+        <h5>Seller: {{product?.seller}}</h5>
+        <!-- <hr class="my-3 text-white"> -->
+    </div>
+
+    <!-- <div class="d-flex flex-wrap align-items-center justify-content-center gap-3 my-5">
+        <img src="assets/icons/windows.png" width="50px" height="50px" alt="GTA icon">
+        <img src="assets/icons/gta3.png" width="50px" height="50px" alt="GTA icon">
+        <img src="assets/icons/gta-san.png" width="50px" height="50px" alt="GTA icon">
+        <img src="assets/icons/max-payne.png" width="50px" height="50px" alt="GTA icon">
+    </div> -->
+    
+    <div class="row bg-dark text-white rounded px-3 py-4 my-4">
+        <h2>Product Description</h2>
+        <p>{{product?.description}}</p>
+    </div>
+
 </div>
