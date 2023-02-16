@@ -20,4 +20,10 @@ export class ProductService {
     let auth = `auth=${environment.auth}`
     return this.http.get(environment.firebaseConfig.databaseURL + `/products/${id}.json?${auth}`)
   }
+
+  getProductByName(name:string){
+    let auth = `auth=${environment.auth}`
+    let query = `orderBy="name"&startAt="${name}"`
+    return this.http.get(environment.firebaseConfig.databaseURL + `/products.json?${auth}&${query}`)
+  }
 }

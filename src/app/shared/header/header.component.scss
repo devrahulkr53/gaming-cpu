@@ -1,3 +1,10 @@
 .nav-link {
     cursor: pointer;
 }
+
+.sticky-navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}

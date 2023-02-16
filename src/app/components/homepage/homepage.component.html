@@ -1,11 +1,11 @@
-<div class="container-fluid text-white">
-    <div class="row p-1 py-5 align-items-center">
+<div class="container-fluid">
+    <div class="row p-1 py-5 mb-5 align-items-center">
         <div class="col-md-7">
             <h1 class="display-2" style="font-weight: 700;">Buy Prebuilt Gaming PC Under Rs.30,000</h1>
             <p class="">Unleash Your Gaming Potential with Gaming CPU's Affordable and Assembled Gaming PCs in India</p>
             <div class="d-flex d-md-none align-items-center gap-2">
                 <a [href]="'/gaming-pc?category=BUDGET GAMING'"><button class="btn btn-sm btn-dark px-3">Explore PCs</button></a>
-                <a href="/contact-us"><button class="btn btn-sm btn-light px-3 me-2">Contact Us</button></a>
+                <a href="/contact-us"><button class="btn btn-sm btn-secondary px-3 me-2">Contact Us</button></a>
                 <a target="_blank" href="tel:8709903843"><img src="assets/social/whatsapp2.png" width="30px" alt="Whatsapp icon"></a>
                 <a target="_blank" href="https://www.instagram.com/gamingcpu.in/"><img src="assets/social/instagram.png" width="25px"></a>
             </div>
@@ -24,115 +24,66 @@
         </div>
         <div class="col-md-3 d-none d-md-block offset-md-2">
             <!-- <div id="mydiv"></div> -->
-            <img src="assets/pc-images/streaming/2.png" width="100%" alt="PC">
+            <img src="assets/pc-images/extreme/1.png" width="100%" alt="PC">
         </div>
     </div>
     
-    <div id="carouselExampleCaptions" class="carousel slide d-none d-lg-block" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active" data-bs-interval="3000">
-
-            <div class="container">
-                <div class="row">
-                    <div *ngFor="let item of productList?.slice(0,4)" class="col-6 col-md-3 p-1">
-                        <a [href]="'/product?id='+item.id"><div class="card border border-3 border-dark cursor-pointer text-white my-1" style="background-color: unset;">
-                            <img [src]="item.productImage" width="80%" height="280px" class="mx-auto p-4" [alt]="item?.name">
-                            <div class="p-2 text-center">
-                                <!-- <button class="btn btn-lg btn-secondary px-5">View Product</button> -->
-                                <h2>Rs. {{item.sellingPrice}}</h2>
-                                <h6>{{item.name}}</h6>
-                            </div>
-                        </div></a>
+    
+    <h2>Budget Gaming PC</h2>
+    <!-- <p>A budget gaming PC offers an affordable and accessible way to enjoy video games without breaking the bank. It is designed to deliver a smooth gaming experience with limited investment.</p> -->
+    <hr>
+    <div slickContainer #slickController="slick" [slickConfig]="config">
+        <ng-container *ngIf="slickController.initialize">
+            <div slickItem *ngFor="let item of budgetPC; let i = index">
+                <a [href]="'/product?id='+item.id+'&name='+item.productName+'&image='+item.productImage" class="text-dark"><div class="cursor-pointer m-1 p-2" style="background-color: unset;">
+                    <img [src]="item.productImage" width="100%" height="280px" class="p-0 d-none d-md-block" [alt]="item?.name">
+                    <img [src]="item.productImage" width="100%" height="180px" class="p-0 d-block d-md-none" [alt]="item?.name">
+                    <div class="p-0 pt-2">
+                        <!-- <button class="btn btn-lg btn-secondary px-5">View Product</button> -->
+                        <div>{{item.productName}}</div>
+                        <h2 class="m-0" style="font-weight: 500;">Rs. {{item.sellingPrice}}</h2>
                     </div>
-                </div>
+                </div></a>
             </div>
-
-          </div>
-          <div class="carousel-item" data-bs-interval="3000">
-            
-            <div class="container">
-                <div class="row">
-                    <div *ngFor="let item of productList?.slice(4,8)" class="col-6 col-md-3 p-1">
-                        <a [href]="'/product?id='+item.id"><div class="card border border-3 border-dark cursor-pointer text-white my-1" style="background-color: unset;">
-                            <img [src]="item.productImage" width="80%" height="280px" class="mx-auto p-4" [alt]="item?.name">
-                            <div class="p-2 text-center">
-                                <!-- <button class="btn btn-lg btn-secondary px-5">View Product</button> -->
-                                <h2>Rs. {{item.sellingPrice}}</h2>
-                                <h6>{{item.name}}</h6>
-                            </div>
-                        </div></a>
-                    </div>
-                </div>
-            </div>
-
-          </div>
-          <div class="carousel-item" data-bs-interval="3000">
-            
-            <div class="container">
-                <div class="row">
-                    <div *ngFor="let item of productList?.slice(8,12)" class="col-6 col-md-3 p-1">
-                        <a [href]="'/product?id='+item.id"><div class="card border border-3 border-dark cursor-pointer text-white my-1" style="background-color: unset;">
-                            <img [src]="item.productImage" width="80%" height="280px" class="mx-auto p-4" [alt]="item?.name">
-                            <div class="p-2 text-center">
-                                <!-- <button class="btn btn-lg btn-secondary px-5">View Product</button> -->
-                                <h2>Rs. {{item.sellingPrice}}</h2>
-                                <h6>{{item.name}}</h6>
-                            </div>
-                        </div></a>
-                    </div>
-                </div>
-            </div>
-
-          </div>
-        </div>
-        <button class="carousel-control-prev bg-dark" style="width: 8%;" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next bg-dark" style="width: 8%;" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-    <div id="carouselExampleCaptions2" class="carousel slide d-block d-lg-none text-dark" data-bs-ride="carousel">
-        <!-- <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleCaptions2" *ngFor="let item of productList; let i = index" [ngClass]="{'active': i == 0}" [attr.data-bs-slide-to]="i"></button>
-        </div> -->
-        <div class="carousel-inner">
-          <div class="carousel-item" *ngFor="let item of productList; let i = index" [ngClass]="{'active': i == 0}" data-bs-interval="3000">
-
-            <div class="container px-0">
-                <div class="row">
-                    <div class="col-12 p-0 text-white">
-                        <a [href]="'/product?id='+item.id" class="text-dark"><div class="cursor-pointer my-1" style="background-color: unset;">
-                            <img [src]="item.productImage" width="80%" class="p-0" [alt]="item?.name">
-                            <div class="p-2 px-3">
-                                <!-- <button class="btn btn-lg btn-secondary px-5">View Product</button> -->
-                                <h2 class="m-0 display-3" style="font-weight: 500;">Rs. {{item.sellingPrice}}</h2>
-                                <h6 class="m-0">{{item.name}}</h6>
-                            </div>
-                        </div></a>
-                    </div>
-                </div>
-            </div>
-
-          </div>
-          
-        </div>
-        <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button> -->
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+        </ng-container>
     </div>
 
+    <h2>Extreme Gaming PC</h2>
+    <!-- <p>An extreme gaming PC is a high-performance machine designed for the most demanding gamers. It is equipped with the latest and greatest hardware to handle the most graphically intense video games and provides an immersive gaming experience.</p> -->
+    <hr>
+    <div slickContainer #slickController="slick" [slickConfig]="config">
+        <ng-container *ngIf="slickController.initialize">
+            <div slickItem *ngFor="let item of extremePC; let i = index">
+                <a [href]="'/product?id='+item.id+'&name='+item.productName+'&image='+item.productImage" class="text-dark"><div class="cursor-pointer card m-1 p-2 shadow-md" style="background-color: unset;">
+                    <img [src]="item.productImage" width="100%" height="280px" class="p-0 d-none d-md-block" [alt]="item?.name">
+                    <img [src]="item.productImage" width="100%" height="180px" class="p-0 d-block d-md-none" [alt]="item?.name">
+                    <div class="p-0 pt-2">
+                        <!-- <button class="btn btn-lg btn-secondary px-5">View Product</button> -->
+                        <div>{{item.productName}}</div>
+                        <h2 class="m-0" style="font-weight: 500;">Rs. {{item.sellingPrice}}</h2>
+                    </div>
+                </div></a>
+            </div>
+        </ng-container>
+    </div>
+
+    <h2>Streaming Gaming PC</h2>
+    <!-- <p>A streaming PC is a computer specifically designed for live streaming video games or other multimedia content. It has powerful hardware and efficient software to provide smooth and seamless video playback, ensuring high-quality streams for viewers.</p> -->
+    <hr>
+    <div slickContainer #slickController="slick" [slickConfig]="config">
+        <ng-container *ngIf="slickController.initialize">
+            <div slickItem *ngFor="let item of streamingPC; let i = index">
+                <a [href]="'/product?id='+item.id+'&name='+item.productName+'&image='+item.productImage" class="text-dark"><div class="cursor-pointer card m-1 p-2 shadow-md" style="background-color: unset;">
+                    <img [src]="item.productImage" width="100%" height="280px" class="p-0 d-none d-md-block" [alt]="item?.name">
+                    <img [src]="item.productImage" width="100%" height="180px" class="p-0 d-block d-md-none" [alt]="item?.name">
+                    <div class="p-0 pt-2">
+                        <!-- <button class="btn btn-lg btn-secondary px-5">View Product</button> -->
+                        <div>{{item.productName}}</div>
+                        <h2 class="m-0" style="font-weight: 500;">Rs. {{item.sellingPrice}}</h2>
+                    </div>
+                </div></a>
+            </div>
+        </ng-container>
+    </div>
     
 </div>

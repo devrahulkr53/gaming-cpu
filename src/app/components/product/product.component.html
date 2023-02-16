@@ -40,8 +40,8 @@
                     <img src="assets/icons/close.png" width="20px" height="20px" alt="Check icon">
                     <strong class="px-2">Keyboard, Mouse and Moniter</strong>
                 </div>
-                <a [href]="'/checkout?id='+productId" class="d-none d-md-block"><button class="btn btn-lg btn-dark px-5 mt-2">Purchase Now</button></a>
-                <a [href]="'/checkout?id='+productId" class="d-block d-md-none mobile-purchase-button"><button class="btn btn-lg btn-dark shadow-md pt-3 pb-4 w-100">Purchase Now</button></a>
+                <a [href]="'/checkout?id='+productId" class="d-none d-md-block"><button class="btn btn-lg btn-dark px-5 mt-2">BUY NOW</button></a>
+                <a [href]="'/checkout?id='+productId" class="d-block d-md-none mobile-purchase-button"><button class="btn btn-lg btn-dark shadow-md pt-3 pb-4 w-100">BUY NOW</button></a>
             </div>
         </div>
     </div>
@@ -127,9 +127,26 @@
         <img src="assets/icons/max-payne.png" width="50px" height="50px" alt="GTA icon">
     </div> -->
     
-    <div class="row bg-dark text-white rounded px-3 py-4 my-4">
+    <div class="row rounded py-4 my-4">
         <h2>Product Description</h2>
         <p>{{product?.description}}</p>
     </div>
 
+    <h2>Related Products</h2>
+    <hr>
+    <div slickContainer #slickController="slick" [slickConfig]="config">
+        <ng-container *ngIf="slickController.initialize">
+            <div slickItem *ngFor="let item of productList; let i = index">
+                <a [href]="'/product?id='+item.id" class="text-dark"><div class="cursor-pointer m-1 p-2" style="background-color: unset;">
+                    <img [src]="item.productImage" width="100%" height="280px" class="p-0 d-none d-md-block" [alt]="item?.name">
+                    <img [src]="item.productImage" width="100%" height="180px" class="p-0 d-block d-md-none" [alt]="item?.name">
+                    <div class="p-0 pt-2">
+                        <!-- <button class="btn btn-lg btn-secondary px-5">View Product</button> -->
+                        <div>{{item.productName}}</div>
+                        <h2 class="m-0" style="font-weight: 500;">Rs. {{item.sellingPrice}}</h2>
+                    </div>
+                </div></a>
+            </div>
+        </ng-container>
+    </div>
 </div>

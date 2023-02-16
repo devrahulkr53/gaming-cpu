@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
+import { Slick } from 'ngx-slickjs';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -10,7 +11,37 @@ import { ProductService } from 'src/app/services/product.service';
 export class HomepageComponent implements OnInit {
 
   productList:any;
+  budgetPC:any;
+  extremePC:any;
+  streamingPC:any;
   isPageLoading:boolean = true;
+  
+  arrayLength = 10;
+  config: Slick.Config = {
+    infinite: true,
+    slidesToShow: 5,
+    slidesToScroll: 2,
+    dots: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    // mouseWheelMove: false,
+    responsive: [
+      { 
+        breakpoint: 800, 
+        settings: {
+          slidesToShow: 2,
+          mouseWheelMove: true
+        } 
+      },
+      { 
+        breakpoint: 1500, 
+        settings: {
+          slidesToShow: 3,
+          mouseWheelMove: true
+        } 
+      }
+    ]
+  }
   constructor(
     private productService: ProductService,
     private meta: Meta,
@@ -34,8 +65,11 @@ export class HomepageComponent implements OnInit {
   }
 
   getProducts(){
-    this.productService.getAllProducts().subscribe(res=>{
-      this.productList = this.mergeKeyValues(res);
+    this.productService.getAllProducts().subscribe((res:any)=>{
+      // this.productList = this.mergeKeyValues(res);
+      this.budgetPC = this.mergeKeyValues(res).filter((e:any)=>e.name === "BUDGET GAMING")
+      this.extremePC = this.mergeKeyValues(res).filter((e:any)=>e.name === "EXTREME GAMING")
+      this.streamingPC = this.mergeKeyValues(res).filter((e:any)=>e.name === "STREAMING")
       this.isPageLoading = false;
     })
   }
