@@ -78,7 +78,7 @@ export class CheckoutComponent implements OnInit {
   ngOnInit(): void {
     this.billingForm = new FormGroup({
       fullname: new FormControl('', Validators.required),
-      email: new FormControl('', [Validators.required, Validators.pattern(this.emailRegex)]),
+      email: new FormControl('', [Validators.pattern(this.emailRegex)]),
       address: new FormControl('', [Validators.required, Validators.max(200)]),
       address2: new FormControl('', Validators.max(200)),
       state: new FormControl('', [Validators.required, Validators.max(40)]),

@@ -5,9 +5,9 @@
     border-color: darkred !important;
 }
 .mobile-checkout-button {
-    position: sticky;
-    // left: 0;
-    margin-top: 20px;
-    bottom: 15px;
+    position: fixed;
+    left: 0;
+    // margin-top: 20px;
+    bottom: 0px;
     width: 100%;
 }
